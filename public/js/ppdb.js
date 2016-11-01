@@ -1,13 +1,15 @@
 $('document').ready(()=> {
   // Form Siswa Baru
   $('#isKps').click(function(){
-    if($("#nokarsos").attr("disabled")){
-      $("#nokarsos").removeAttr("disabled")
-
-    }else if (!$("#nokarsos").attr("disabled")){
-      $("#nokarsos").attr("disabled");
-    }
+    $("#nokarsos").toggleDisabled();
   });
 
+  (function($) {
+    $.fn.toggleDisabled = function() {
+      return this.each(function(){
+        this.disabled = !this.disabled;
+      });
+    };
+  })(jQuery);
 
 });
