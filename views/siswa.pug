@@ -1,0 +1,24 @@
+extend template
+
+block content
+  h2 Data Siswa Baru Terdaftar
+  table.table.table-bordered
+    thead
+      tr
+        th NISN
+        th Nama
+        th NIK
+        th Status
+
+    tbody
+      for siswa in data
+        tr
+          td #{siswa.nisn}
+          td #{siswa.nama}
+          td #{siswa.nik}
+          td
+            a(href="/removeSiswa/" + siswa._id).btn.btn-danger Hapus
+            | &nbsp;
+            a(href="/editSiswa/" + siswa._id).btn.btn-warning Edit
+block sidebar
+  button.btn.btn-lg Cetak

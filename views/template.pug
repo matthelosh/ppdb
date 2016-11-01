@@ -1,0 +1,38 @@
+doctype
+html
+	head
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		title #{title} | #{siteName}
+		link(rel='stylesheet', href='/static/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/static/css/fa/css/font-awesome.css')
+		link(rel='stylesheet', href='/static/css/style.css')
+
+	body
+		header
+			h1.ko.text-center
+				i.fa.fa-building
+				| &nbsp; PPDB 2017
+
+			nav.navbar
+				ul.navs
+					li
+						a(href='/', title="Beranda") Beranda
+					li
+						a(href='/siswa-baru', title="Siswa Baru") Siswa Baru
+					li
+						a(href='/siswa', title="Data Siswa") Data Siswa
+		.row-fluid
+			.container
+				.main-content.col-md-9
+					block content
+				.sidebar.col-md-3
+					block sidebar
+
+		.row-fluid
+			footer
+				.container
+					p &copy; 2016 matthelosh
+
+		script(src='/static/js/jquery-2.1.4.min.js')
+		script(src='/static/js/bootstrap.min.js')
+		script(src='/static/js/ppdb.js')

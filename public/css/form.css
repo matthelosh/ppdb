@@ -1,0 +1,21 @@
+.form-control {
+  /*height: 25px;
+  padding: 0 5px;*/
+  border-radius: 2px !important;
+}
+
+
+.btn{
+	width: auto;
+	/*height: 30px;*/
+	/*background: -webkit-radial-gradient(#89aaef, #6790de);*/
+	border: 0!important;
+	padding: 6px 15px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px !important;
+}
+
+fieldset {
+  margin-top: 20px;
+}

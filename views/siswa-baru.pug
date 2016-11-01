@@ -1,0 +1,122 @@
+extend template
+block content
+  form(method="post", action="/siswa")
+    h2 Formulir Siswa Baru
+    fieldset.data-siswa
+      legend Data Siswa
+      .row
+        .col-sm-3
+          .form-group
+            label(for="nisn") NISN:
+            input.form-control#nisn(type="text", name="nisn", placeholder="Nomor Induk Siswa Nasional*")
+        .col-sm-5
+          .form-group
+            label(for="nama") Nama Siswa:
+            input.form-control#nama(type="text", name="nama", placeholder="Nama Calon Siswa")
+        .col-sm-4
+          .form-group
+            label(for="nik") NIK:
+            input.form-control#nik(type="text", name="nik", placeholder="Nomor Induk Kependudukan (di Kartu Keluarga)")
+
+      .row
+        .col-sm-4
+          .form-group
+            label(for="komkal") Pilihan Keahlian:
+            select#komkal(name="komkal").form-control
+              option(value="0") Pilih Kompetensi Keahlian
+              option(value="tkj") Teknik Komputer dan Jaringan (TKJ)
+              option(value="tkr") Teknik Kendaraan Ringan (TKR)
+              option(value="otr") Ototronika (OTR)
+              option(value="mm") Multimedia (MM)
+              option(value="tsm") Teknik Sepeda Motor (TSM)
+
+        .col-sm-4
+          .form-group
+            label(for="tpt_lahir") Tempat Lahir:
+            input(type="text", name="tpt_lahir", placeholder="Tempat Lahir").form-control#tpt_lahir
+        .col-sm-4
+          .form-group
+            label(for="tgl_lahir") Tanggal Lahir:
+            input(type="text", name="tgl_lahir", placeholder="Tanggal Lahir").form-control#tgl_lahir
+
+      .row
+        .col-sm-2
+          .form-group
+            label(for="rt") RT
+            input(type="text", name="rt", placeholder="RT").form-control#rt
+
+        .col-sm-2
+          .form-group
+            label(for="rw") RW
+            input(type="text", name="rw", placeholder="RW").form-control#rw
+
+        .col-sm-4
+          .form-group
+            label(for="dusun") Dusun
+            input(type="text", name="dusun", placeholder="Dusun").form-control#dusun
+
+        .col-sm-4
+          .form-group
+            label(for="desa") Desa / Kelurahan
+            input(type="text", name="desa", placeholder="Desa/Kelurahan").form-control#desa
+
+      .row
+        .col-sm-4
+          .form-group
+            label(for="kecamatan") Kecamatan
+            input(type="text", name="kecamatan", placeholder="Kecamatan").form-control#kecamatan
+
+        .col-sm-2
+          .form-group
+            label(for="kodepos") Kode Pos
+            input(type="text", name="kodepos", placeholder="Kode Pos").form-control#kodepos
+
+        .col-sm-4
+          .form-group
+            label(for="kota") Kota / Kabupaten
+            input(type="text", name="kota", placeholder="Kota / Kabupaten").form-control#kota
+
+    fieldset
+      legend Khusus Penerima Jaminan Sosial
+      .row
+        label.checkbox-inline
+          input(type="checkbox", value="")#isKps
+          Penerima KPS
+
+      .row
+        .col-sm-6
+          .form-group
+            label(for="nokarsos") Nomor KPS/KIP, dll:
+            input(type="text", name="nokarsos", placeholder="No. KPS, KIP, dll" disabled).form-control#nokarsos
+
+    fieldset.data-ortu
+      legend Data Orang Tua
+      .row
+        .col-sm-6
+          .form-group
+            label(for="namaAyah") Nama Ayah
+            input(type="text", name="namaAyah", placeholder="Nama Ayah").form-control#namaAyah
+
+        .col-sm-4
+          .form-group
+            label(for="tptAyah") Tempat Lahir
+            input(type="text", name="tptlAyah", placeholder= "Tempat Lahir").form-control#tptayah
+
+        .col-sm-2
+          .form-group
+            label(for="tglAyah") Tanggal Lahir
+            input(type="text", name="tglAyah", placeholder= "Tanggal Lahir").form-control#tglayah
+
+
+
+      .row
+        .col-sm-12
+          .form-group
+            button.btn.btn-info.center-block(type="submit") Simpan
+
+
+block sidebar
+  h2.page-header Informasi
+  for siswa in data
+    ul
+      li #{siswa.nama} #{siswa.nisn}
